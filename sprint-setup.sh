@@ -37,10 +37,10 @@ ARCHIVED=sprint_bootstrap.tar.gz
 CHAINSRC=''
 
 #ADDNODES
-ADDNODEA=165.227.114.138:9977
-ADDNODEB=104.248.12.13:9977
-ADDNODEC=81.180.139.213:9977
-ADDNODED=81.180.139.214:9977
+ADDNODEA=80.96.79.148:9977
+ADDNODEB=80.96.79.131:9977
+ADDNODEC=80.96.79.141:9977
+ADDNODED=80.96.79.145:9977
 
 
 #name of the folder created with the git clone when clonign the repository
@@ -337,12 +337,12 @@ echo -e "${YELLOW}Detect Ubuntu Version${NC}"
    echo -e
    sudo wget https://github.com/Sprint-Core/Sprint/releases/download/v1.0.0.2/sprint-bootstrap.tar.gz
 #   sudo wget --load-cookies /tmp/cookies.txt "https://drive.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://drive.google.com/uc?export=download&id=1DSl_kXMH_JhftpztjddPbIYNvXArYb4d' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1DSl_kXMH_JhftpztjddPbIYNvXArYb4d" -O sprint_chain.zip && rm -rf /tmp/cookies.txt
-   if [ -e sprint_chain.zip ] ; then
+   if [ -e sprint-bootstrap.tar.gz ] ; then
      echo -e "${YELLOW}Blockchain copy download SUCCES${NC}" ;
    else
      echo -e "${RED}Blockchain copy download SUCCES${NC}" ;
    fi
-   sudo unzip -qq $ARCHIVED
+   sudo tar xzf $ARCHIVED
    rm -rf $ARCHIVED
    sudo cp -r ~/$FOLDER/blocks ~/.sprintcore
    sudo cp -r ~/$FOLDER/chainstate ~/.sprintcore
