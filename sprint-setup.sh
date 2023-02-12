@@ -28,12 +28,12 @@ SOURCEB='https://github.com/Sprint-Core/Sprint/releases/download/v1.0.0.1/sprint
 
 #The archive itself from the source
 #18.04
-ARCHIVEA=sprintcore-1.0.0.1-linux.tar
+ARCHIVEA=sprintcore-1.0.0.2-Linux.tar.gz
 #16.04
-ARCHIVEB=sprintcore-1.0.0.1-linux.tar
+ARCHIVEB=sprintcore-1.0.0.2-linux.tar.gz
 SENTINELSRC='https://github.com/Sprint-Core/sentinel.git'
 
-ARCHIVED=sprint_chain.zip
+ARCHIVED=sprint_bootstrap.tar.gz
 CHAINSRC=''
 
 #ADDNODES
@@ -335,7 +335,8 @@ echo -e "${YELLOW}Detect Ubuntu Version${NC}"
  if [[ $DOSETUP =~ "y" ]] ; then
    echo -e "getting the latest chain files available"
    echo -e
-   sudo wget --load-cookies /tmp/cookies.txt "https://drive.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://drive.google.com/uc?export=download&id=1DSl_kXMH_JhftpztjddPbIYNvXArYb4d' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1DSl_kXMH_JhftpztjddPbIYNvXArYb4d" -O sprint_chain.zip && rm -rf /tmp/cookies.txt
+   sudo wget https://github.com/Sprint-Core/Sprint/releases/download/v1.0.0.2/sprint-bootstrap.tar.gz
+#   sudo wget --load-cookies /tmp/cookies.txt "https://drive.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://drive.google.com/uc?export=download&id=1DSl_kXMH_JhftpztjddPbIYNvXArYb4d' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1DSl_kXMH_JhftpztjddPbIYNvXArYb4d" -O sprint_chain.zip && rm -rf /tmp/cookies.txt
    if [ -e sprint_chain.zip ] ; then
      echo -e "${YELLOW}Blockchain copy download SUCCES${NC}" ;
    else
